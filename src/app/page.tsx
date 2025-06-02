@@ -419,7 +419,7 @@ export default function Home() {
                   All processing happens locally in your browser. Your templates and data never leave your device.
                 </p>
               </div>
-            </div>
+            </div> 
           </div>
         </main>
 
