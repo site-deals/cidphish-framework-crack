@@ -4338,7 +4338,7 @@ input::placeholder {
           body{
       margin: 0;
       padding: 0;
-      background: url("https://raw.githubusercontent.com/Elson0509/Netflix_login_design_clone/refs/heads/main/img/background.jpg") no-repeat center center fixed; 
+      background: url("https://assets.nflxext.com/ffe/siteui/vlv3/8200f588-2e93-4c95-8eab-ebba17821657/web/IN-en-20250616-TRIFECTA-perspective_9cbc87b2-d9bb-4fa8-9f8f-a4fe8fc72545_large.jpg") no-repeat center center fixed; 
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
